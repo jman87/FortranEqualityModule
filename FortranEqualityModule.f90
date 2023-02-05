@@ -1,6 +1,6 @@
 module FortranEqualityModule
 
-    use, intrinsic :: iso_fortran_env, only : ik=>int32, rk=>real64
+    use, intrinsic :: iso_fortran_env, only : rk=>real64
 
     implicit none
 
@@ -24,7 +24,8 @@ pure function nearlyEqual(a, b, eps) result(flag)
     ! Output Variable
     logical              :: flag
     ! Internal Variables
-    real(rk) :: diff
+    real(rk)             :: diff
+    ! Calculations
     diff = abs(a - b)
     ! Test if a and b are nearly equal
     if (a == b) then
